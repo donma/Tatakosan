@@ -1,0 +1,224 @@
+﻿@page
+@model IndexModel
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>linxea.github.io</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1 maximum-scale=1.0 user-scalable=no">
+    <link href="https://fonts.googleapis.com/css?family=Press+Start+2P|Permanent+Marker" rel="stylesheet">
+
+    <style>
+        body {
+            color: white;
+            background-color: black;
+            font-family: "Press Start 2P", monospace;
+            font-size: 1rem;
+            text-align: center;
+            text-transform: uppercase;
+            margin: 0;
+        }
+
+            body:before {
+                position: absolute;
+                top: 0;
+                right: 0;
+                bottom: 0;
+                left: 0;
+                margin: auto;
+                background: repeating-linear-gradient(#0D122B, #0D122B 2px, #565B73 2px, #565B73 4px);
+                opacity: 0.2;
+                z-index: 100;
+                content: "";
+                pointer-events: none;
+            }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        h1 {
+            margin: 0;
+        }
+
+        .splash-screen {
+            width: 100vw;
+            height: 100vh;
+        }
+
+        .title {
+            margin: auto;
+            font-family: "Permanent Marker", monospace;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            align-items: center;
+            height: 40vh;
+            font-size: 2rem;
+            line-height: 0.75;
+            word-break: break-word;
+            max-width: 500px;
+        }
+
+            .title h1 {
+                background: -webkit-linear-gradient(rgb(255, 18, 18) 30%, rgb(255, 215, 38));
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+            }
+
+        .title-top {
+            transform: skew(-10deg) rotate(-10deg) translateX(-2rem);
+        }
+
+        .title-bottom {
+            transform: skew(-10deg) rotate(-10deg) translateX(1rem);
+        }
+
+        .buttons {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            height: 50vh;
+            margin: auto;
+        }
+
+            .buttons a {
+                display: block;
+                margin-bottom: 1rem;
+            }
+
+        .bottom {
+         /*   display: flex;*/
+            flex-direction: column;
+            height: 10vh;
+        }
+
+        .credit {
+            margin-top: 10px;
+         /*   pointer-events: none;*/
+        }
+
+        .grey-with-red {
+            color: rgb(192, 192, 192);
+            text-shadow: 2px 2px 0 rgb(192, 11, 11);
+        }
+
+        .purple-with-blue {
+            color: rgb(147, 154, 255);
+            text-shadow: 2px 2px 0 rgb(47, 61, 255);
+        }
+
+        .yellow-with-darkyellow {
+            color: rgb(226, 179, 24);
+            text-shadow: 0 2px 0 rgb(107, 77, 11), 2px 0 0 rgb(151, 109, 19), 2px 2px 0 rgb(151, 109, 19);
+        }
+
+        .yellow {
+            color: rgb(226, 179, 24);
+        }
+
+        .big {
+            font-size: 6rem;
+        }
+
+        @@media (min-width: 400px) {
+            body {
+                font-size: 1.2rem;
+            }
+
+            .big {
+                font-size: 7rem;
+            }
+        }
+
+        @@media (min-width: 600px) {
+            .big {
+                font-size: 9rem;
+            }
+
+            .title {
+                font-size: 3rem;
+                height: 50vh;
+            }
+
+            .buttons {
+                height: 40vh;
+            }
+
+            .title-top {
+                transform: skew(-10deg) rotate(-10deg) translateX(-2rem);
+            }
+
+            .title-bottom {
+                transform: skew(-10deg) rotate(-10deg) translateX(3rem);
+            }
+        }
+
+        @@media (min-width: 800px) {
+            .credit {
+                position: absolute;
+                right: 50px;
+                margin-top: 0;
+            }
+        }
+
+        /* Stole this idea from twilioquest, it's freaking sick. */
+        .load {
+            animation: load 800ms 500ms backwards;
+        }
+
+        @@keyframes load {
+            0% {
+                filter: blur(2px) hue-rotate(-150deg);
+            }
+        }
+
+        ::selection {
+            background: #b4fdff;
+        }
+
+        ::-moz-selection {
+            background: #b4fdff;
+        }
+
+        .copyleft {
+            display: inline-block;
+            transform: rotate(180deg);
+        }
+    </style>
+</head>
+
+<body>
+
+    <section class="splash-screen load">
+        <div class="title">
+            <h1 class="title-top"><span class="big">T</span>atakosan</h1>
+            <h1 class="title-bottom"><span class="big">D</span>ata<span class="big">S</span>tore</h1>
+        </div>
+
+        <div class="buttons grey-with-red">
+            <a class="purple-with-blue">gitgub.com/donma</a>
+            @*<a>/api/Op</a>
+            <a>/api/Qu</a>*@
+            <a>/swagger</a>
+        </div>
+
+        <div class="bottom">
+            <a href="https://github.com/donma">
+                <span class="yellow copyleft">&copy;</span>
+                <span class="yellow-with-darkyellow"> DONMA 2021</span>
+            </a>
+            <div class="credit grey-with-red">template from <span class="yellow-with-darkyellow"><a href='https://codepen.io/toomuchome/pen/QZPYqm'>Toomuchome</a></span></div>
+
+        </div>
+    
+
+    </section>
+    <!-- template from https://codepen.io/toomuchome/pen/QZPYqm -->
+</body>
+</html>
