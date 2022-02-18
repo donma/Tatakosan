@@ -1,6 +1,6 @@
 # Tatakosan
 
-這是一個實驗計畫，主要就是能夠快速使用 Key , Value 存取資料，主要資料庫我是使用 Azure Storage Table ，因為他很便宜
+這是一個實驗計畫，主要就是能夠快速使用 Key , Value 存取資料，主要資料庫我是使用 Azure Storage Table ，因為他很便宜(該死的客家人本性)
 
 除了單純寫入 Azure Storage Table 之外，我還有座記憶體快去，讓存取速度可以正常，這裡我是 base on .netcore 3.1
 
