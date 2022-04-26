@@ -29,11 +29,11 @@ namespace Tatakosan
         /// <summary>
         /// Azure Blob Table Connection String.
         /// </summary>
-        public static readonly string _BlobConnectionString = "DefaultEndpointsProtocol=https;AccountName=tatakosan;AccountKey=ZpliAWe8sWn+c6WtT7MFb5SPv4EnK14HT1J2taE/5l5ZGQ/Kk0vf4o8yNmXUk9vsNIhIC6y/ekwyOQknod3wew==;EndpointSuffix=core.windows.net";
+        public static readonly string _BlobConnectionString = "";
 
 
         /// <summary>
-        /// /api/Op/ClearPool?token=token  ªºtoken
+        /// /api/Op/ClearPool?token=token  çš„token
         /// </summary>
         public readonly static string ClearToken = "token";
 
@@ -41,17 +41,17 @@ namespace Tatakosan
         public readonly static string HashToken = "TATAKOSAN";
 
         /// <summary>
-        /// ¤­¤ÀÄÁ½ĞÀË¬d¤@¤U§Ö¨ú¦³¨S¦³¹L´Á
+        /// äº”åˆ†é˜è«‹æª¢æŸ¥ä¸€ä¸‹å¿«å–æœ‰æ²’æœ‰éæœŸ
         /// </summary>
         private readonly static int RecycleMinutes = 5;
 
         /// <summary>
-        ///  ¦pªG 60 ¬í¡A³£¨S¦³¤H½Ğ¨D¡A¦b¶i¦æ¦^¦¬
+        ///  å¦‚æœ 60 ç§’ï¼Œéƒ½æ²’æœ‰äººè«‹æ±‚ï¼Œåœ¨é€²è¡Œå›æ”¶
         /// </summary>
         private readonly static int HowManySecondsNoDataRequest = 60;
 
         /// <summary>
-        /// ¦pªG¦h¤Ö¤ÀÄÁ¨S¦³¤H¦s¨ú´N¦^¦¬
+        /// å¦‚æœå¤šå°‘åˆ†é˜æ²’æœ‰äººå­˜å–å°±å›æ”¶
         /// default : 4hr * 60=2400;
         /// </summary>
         private readonly static int KeepMinutesInMemory = 2400;
@@ -92,7 +92,7 @@ namespace Tatakosan
 
 
         /// <summary>
-        /// ÀË¬d²M°£°O¾ĞÅé¤¤ªº§Ö¨ú
+        /// æª¢æŸ¥æ¸…é™¤è¨˜æ†¶é«”ä¸­çš„å¿«å–
         /// </summary>
         public static void RestartTimerChecker()
         {
