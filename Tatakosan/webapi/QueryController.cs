@@ -96,12 +96,14 @@ namespace Tatakosan.webapi
         [ProducesResponseType(typeof(ResponseBodyBasic<ResponseDataInfo>), 200)]
         public async Task<IActionResult> GetFullData([FromBody] RequestQueryDataFull src)
         {
+
+
             if (string.IsNullOrEmpty(src.Id) || string.IsNullOrEmpty(src.Table) || string.IsNullOrEmpty(src.Group))
             {
                 var eRes = new ResponseBodyBasic<string>();
                 eRes.Code = "400";
                 eRes.Status = "ERROR";
-                eRes.Message = "TableName null";
+                eRes.Message = "Group , Id or Data null";
                 return Ok(eRes);
             }
 
@@ -158,7 +160,7 @@ namespace Tatakosan.webapi
                 var eRes = new ResponseBodyBasic<string>();
                 eRes.Code = "400";
                 eRes.Status = "ERROR";
-                eRes.Message = "TableName null";
+                eRes.Message = "Group , Id or Data null";
                 return Ok(eRes);
             }
 
