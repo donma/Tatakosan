@@ -32,6 +32,7 @@ namespace Tatakosan.webapi
         [ProducesResponseType(typeof(ResponseBodyBasic<bool>), 200)]
         public async Task<IActionResult> IsTableExisted([FromBody] RequestIsTableExist src)
         {
+
             if (string.IsNullOrEmpty(src.Table))
             {
                 var eRes = new ResponseBodyBasic<string>();
@@ -97,13 +98,17 @@ namespace Tatakosan.webapi
         public async Task<IActionResult> GetFullData([FromBody] RequestQueryDataFull src)
         {
 
+            if (string.IsNullOrEmpty(src.Table))
+            {
+                src.Table = "maindata";
+            }
 
-            if (string.IsNullOrEmpty(src.Id) || string.IsNullOrEmpty(src.Table) || string.IsNullOrEmpty(src.Group))
+            if (string.IsNullOrEmpty(src.Id) ||string.IsNullOrEmpty(src.Group))
             {
                 var eRes = new ResponseBodyBasic<string>();
                 eRes.Code = "400";
                 eRes.Status = "ERROR";
-                eRes.Message = "Group , Id or Data null";
+                eRes.Message = "Group or Id  null";
                 return Ok(eRes);
             }
 
@@ -155,12 +160,18 @@ namespace Tatakosan.webapi
         [ProducesResponseType(typeof(ResponseBodyBasic<ResponseDataExist>), 200)]
         public async Task<IActionResult> IsDataExist([FromBody] RequestIsDataExist src)
         {
-            if (string.IsNullOrEmpty(src.Id) || string.IsNullOrEmpty(src.Table) || string.IsNullOrEmpty(src.Group))
+
+            if (string.IsNullOrEmpty(src.Table))
+            {
+                src.Table = "maindata";
+            }
+
+            if (string.IsNullOrEmpty(src.Id) ||  string.IsNullOrEmpty(src.Group))
             {
                 var eRes = new ResponseBodyBasic<string>();
                 eRes.Code = "400";
                 eRes.Status = "ERROR";
-                eRes.Message = "Group , Id or Data null";
+                eRes.Message = "Group or Id  null";
                 return Ok(eRes);
             }
 
@@ -221,6 +232,7 @@ namespace Tatakosan.webapi
 
         private bool IsDataInMem(string table, string pk, string rk)
         {
+       
             return Startup._Pool.ContainsKey(table.ToLower() + "|" + pk + "|" + rk);
         }
 
