@@ -26,13 +26,10 @@ namespace Tatakosan
         public IConfiguration Configuration { get; }
 
 
-
-        //-- Setting --//
-
         /// <summary>
         /// Azure Blob Table Connection String.
         /// </summary>
-        public static readonly string _BlobConnectionString = "";
+        public static readonly string _BlobConnectionString = "DefaultEndpointsProtocol=https;AccountName=tatakosan;AccountKey=ZpliAWe8sWn+c6WtT7MFb5SPv4EnK14HT1J2taE/5l5ZGQ/Kk0vf4o8yNmXUk9vsNIhIC6y/ekwyOQknod3wew==;EndpointSuffix=core.windows.net";
 
 
         /// <summary>
@@ -58,9 +55,6 @@ namespace Tatakosan
         /// default : 4hr * 60=2400;
         /// </summary>
         private readonly static int KeepMinutesInMemory = 2400;
-
-        //-- Setting End --//
-
 
 
         public static Timer _TimerChecker { get; set; }

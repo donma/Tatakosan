@@ -22,7 +22,7 @@ namespace Tatakosan.webapi
         {
 
 
-            return "HELLO, I am Tatakosan Query," + Startup._Pool.Count ;
+            return "HELLO, I am Tatakosan Query," + Startup._Pool.Count;
 
         }
 
@@ -42,7 +42,7 @@ namespace Tatakosan.webapi
             }
 
 
-            if (src.Sign != (src.Table + ","+Startup.HashToken).ToMD5())
+            if (src.Sign != (src.Table + "," + Startup.HashToken).ToMD5())
             {
                 var eRes = new ResponseBodyBasic<string>();
                 eRes.Code = "403";
@@ -241,9 +241,15 @@ namespace Tatakosan.webapi
             if (data == null)
             {
 
-                var qL = new No2verse.AzureTable.Collections.Query<TatakosanData>(Startup._AzRole, table.ToLower());
-                data = qL.DataByPRKey(pk, rk);
+                var qL = new No2verse.AzureTable.Collections.Query<TatakosanData>(Startup._AzRole, table.ToLower(), false);
+                try
+                {
+                    data = qL.DataByPRKey(pk, rk);
+                }
+                catch
+                {
 
+                }
             }
 
             if (data != null)
